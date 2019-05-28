@@ -15,7 +15,6 @@ test('create character item DOM', assert => {
     const characterItem = new CharacterItem({ character });
     const rendered = characterItem.renderTemplate();
 
-
     //assert
     assert.htmlEqual(rendered, /*html*/`
             <li class="character-item">
@@ -26,6 +25,5 @@ test('create character item DOM', assert => {
                 </blockquote>
             </li>
     `);
-
 });
 

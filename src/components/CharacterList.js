@@ -21,5 +21,4 @@ class CharacterList extends Component {
     }
 }
 
-
 export default CharacterList;

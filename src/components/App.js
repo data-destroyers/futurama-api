@@ -1,8 +1,8 @@
 import Component from './Component.js';
 import Header from './Header.js';
-import futuramaApi from '../services/futurama-api.js';
 import CharacterList from './CharacterList.js';
 import Loading from './Loading.js';
+import futuramaApi from '../services/futurama-api.js';
 
 class App extends Component { 
 
