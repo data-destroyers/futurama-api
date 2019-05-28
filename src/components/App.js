@@ -1,5 +1,7 @@
 import Component from './Component.js';
 import Header from './Header.js';
+import futuramaApi from '../services/futurama-api.js';
+import CharacterList from './CharacterList.js';
 
 class App extends Component { 
 
@@ -10,7 +12,11 @@ class App extends Component {
         const header = new Header();
         dom.insertBefore(header.render(), main);
 
+        const characterList = new CharacterList();
+        main.appendChild(characterList.render());
 
+        futuramaApi.getCharacters()
+            .then(characters => console.log(characters));
 
         return dom;
     }
