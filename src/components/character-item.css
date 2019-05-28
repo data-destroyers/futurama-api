@@ -4,8 +4,9 @@
     width: 300px;
     border: 2px solid red;
     margin: 0 10px 10px 0;
+    overflow: hidden;
 }
 
 .character-item img {
-    height: 250px;
+    height: 200px;
 }
