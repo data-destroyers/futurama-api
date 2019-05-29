@@ -4,7 +4,7 @@ class Loading extends Component {
     renderTemplate() {
         return /*html*/`
             <div class="loading">
-                <img src="../../assets/loading.gif">
+                <img class="loading-gif" src="../../assets/loading.gif">
             </div>
         `;
     }
