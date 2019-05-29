@@ -1,7 +1,7 @@
 .character-item {
     list-style: none;
     text-align: center;
-    width: 300px;
+    width: 290px;
     border: 2px solid red;
     margin: 0 10px 10px 0;
     overflow: hidden;
