@@ -16,16 +16,31 @@ class App extends Component {
         const characterList = new CharacterList({ characters: [] });
         main.appendChild(characterList.render());
 
-        const loading = new Loading({ loading: true });
+        const loading = new Loading({ loading: false });
         main.appendChild(loading.render());
 
-        futuramaApi.getCharacters()
-            .then(characters => {
-                characterList.update({ characters }); 
-            })
-            .finally(() => {
-                loading.update({ loading: false });
-            });
+        function loadCharacters() {
+            const params = window.location.hash.slice(1);
+
+            const searchParams = new URLSearchParams(params);
+            const search = searchParams.get('search');
+
+            loading.update({ loading: true });
+            
+            futuramaApi.getCharacters(search)
+                .then(characters => {
+                    characterList.update({ characters }); 
+                })
+                .finally(() => {
+                    loading.update({ loading: false });
+                });
+        }
+
+        loadCharacters();
+
+        window.addEventListener('hashchange', () => {
+            loadCharacters();
+        });
 
         return dom;
     }
